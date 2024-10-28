@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Mobiles</title>
+</head>
+<body>
+    <h1>Display Mobiles</h1>
+    <table>
+        <tr th:each="mobile : ${mobiles}">
+            <td th:text="${mobile.brand}">Brand</td>
+            <td th:text="${mobile.model}">Model</td>
+            <td th:text="${mobile.price}">Price</td>
+            <td><a th:href="@{/mobiles/edit/{id}(id=${mobile.id})}">Edit</a></td>
+            <td><a th:href="@{/mobiles/delete/{id}(id=${mobile.id})}">Delete</a></td>
+        </tr>
+    </table>
+    <p><a href="/mobiles/add">Add Mobile</a></p>
+</body>
+</html>
